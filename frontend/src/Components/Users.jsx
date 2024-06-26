@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import {  Link } from "react-router-dom";
 import user from '../store/user';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue  , useSetRecoilState} from 'recoil';
 const Users = () => {
   const [filter , setFilter] = useState(null);
   const [users , setUsers] = useState([]);
