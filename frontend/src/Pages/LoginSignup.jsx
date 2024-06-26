@@ -13,7 +13,7 @@ const LoginSignup = () => {
   const userObject = useRecoilValue(user); 
   const handleLogin = async (event)=>{
     event.preventDefault();
-    const response = await axios.post("http://localhost:3000/api/v1/user/login",{
+    const response = await axios.post("https://paytm-project-6qha.onrender.com/api/v1/user/login",{
         email,password
     },{
         headers:{
@@ -33,7 +33,7 @@ const LoginSignup = () => {
   }
   const handleSignup = async (event)=>{
     event.preventDefault();
-    const response = await axios.post("http://localhost:3000/api/v1/user/signup",{
+    const response = await axios.post("https://paytm-project-6qha.onrender.com/api/v1/user/signup",{
         email,password,first_name,last_name
     },{
         headers:{

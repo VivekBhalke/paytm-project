@@ -13,7 +13,7 @@ const InitUser = () => {
     async function verifyUser(){
         console.log("init user ran");
         console.log("this is the token : " , localStorage.getItem("token"));
-        const response = await axios.get("http://localhost:3000/api/v1/me/myId" , {
+        const response = await axios.get("https://paytm-project-6qha.onrender.com/api/v1/me/myId" , {
             headers: {
                 'Content-Type': 'application/json',
                 'token' : localStorage.getItem("token")

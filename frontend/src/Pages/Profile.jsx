@@ -1,6 +1,6 @@
 import React from 'react'
 import user from '../store/user'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { useRecoilValue, useSetRecoilState  } from 'recoil'
 const Profile = () => {
     const userObject = useRecoilValue(user);
     const setUserObject = useSetRecoilState(user);
@@ -14,7 +14,7 @@ const Profile = () => {
             user_id : null,
             balance : null
           });
-        window.location.href = "/"
+          window.location.href = "/"
     }
     return (
         <div className=' flex flex-col w-screen h-screen justify-center items-center '>

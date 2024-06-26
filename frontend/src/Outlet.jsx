@@ -10,7 +10,6 @@ const Outlet = () => {
         <Route path="/" element={<Home/>}  />
         <Route path="/sendMoney/:user_id" element={<SendMondy/>}  />
         <Route path="/profile" element={<Profile/>}  />
-        
       </Routes>
     </BrowserRouter>
   )

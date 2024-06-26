@@ -7,7 +7,7 @@ const Users = () => {
   useEffect(()=>{
     async function getUsers(){
         console.log("get User ran");
-        const url = "http://localhost:3000/api/v1/user/bulk?filter=" + filter;
+        const url = "https://paytm-project-6qha.onrender.com/api/v1/user/bulk?filter=" + filter;
         const response = await axios.get(url , {
             headers : {
                 'Content-type' : "application/json",
@@ -45,13 +45,12 @@ function User({user}){
     const to = "/sendMoney/" + user.user_id;
     return (
         <div className='flex w-full  justify-between'>
-            <div className=' flex gap-4 items-center'>
+            <div className=' flex sm:gap-4  sm:justify-start items-center'>
                 <p className=' rounded-[30%] shadow-md p-3 text-center hover:bg-purple-400 transition duration-1000'>{user.first_name[0]}</p>
-                <p className=' text-md text-black hover:text-purple-500 transition duration-1000 '>{user.first_name}</p>
-                <p className=' text-md text-black hover:text-purple-500 transition duration-1000 ml-1'>{user.last_name}</p>
+                <p className=' text-md text-black hover:text-purple-500 transition duration-1000 '>{user.first_name + " " +  user.last_name}</p>
 
             </div>
-            <Link to={to} state={{user}}><button className='hover:bg-purple-400 transition duration-1000 bg-black rounded-md shadow-lg p-2 text-white text-xl font-bold'>Send Money</button></Link>
+            <Link to={to} state={{user}}><button className='hover:bg-purple-400 transition duration-1000 bg-black rounded-md shadow-lg p-2 text-white text-md sm:text-xl font-bold'>Send Money</button></Link>
         </div>
     )
 }

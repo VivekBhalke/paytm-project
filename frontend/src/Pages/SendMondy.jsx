@@ -9,7 +9,7 @@ const SendMondy = () => {
     const handleTransfer = (e) =>{
         e.preventDefault();
         async function transfer(){
-            const response = await axios.post("http://localhost:3000/api/v1/account/transfer" ,{
+            const response = await axios.post("https://paytm-project-6qha.onrender.com/api/v1/account/transfer" ,{
                 to: user.user_id,
                 amount
             },{
