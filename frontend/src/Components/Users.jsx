@@ -1,9 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import {  Link } from "react-router-dom";
+import user from '../store/user';
+import { useRecoilValue } from 'recoil';
 const Users = () => {
   const [filter , setFilter] = useState(null);
   const [users , setUsers] = useState([]);
+  const setuser = useSetRecoilState(user);
+  const userObject = useRecoilValue(user);
   useEffect(()=>{
     async function getUsers(){
         console.log("get User ran");
@@ -35,7 +39,7 @@ const Users = () => {
        <h1 className='text-xl font-sans font-bold'>Users</h1>
        <input type="text" className=' w-full rounded-md px-3 h-9 text-xl shadow-md' onChange={(e)=> setFilter(e.target.value)} placeholder='Search..'/>
        {
-          users.map((user , index)=>( <User user={user }/>))  
+          users.map((user , index)=>( user.user_id != userObject.user_id ?  <User user={user }/> : "No users"))  
        }
     </div>
   )
