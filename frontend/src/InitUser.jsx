@@ -26,6 +26,7 @@ const InitUser = () => {
         else{
             console.log("null")
             setuser(null);
+            console.log("done")
         }
     }
     verifyUser();
